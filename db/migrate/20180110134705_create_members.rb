@@ -5,7 +5,7 @@ class CreateMembers < ActiveRecord::Migration
     	t.string :name
     	t.string :address
     	t.bigint :phone_no
-    	t.integer :gender
+    	t.string :gender
     	t.integer :code
     	t.date :validity_date
     	t.boolean :is_author, default: false
