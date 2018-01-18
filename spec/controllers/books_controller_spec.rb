@@ -38,7 +38,7 @@ RSpec.describe BooksController, type: :controller do
       assigns(:book).publication.should eq nil
       assigns(:book).code.should eq nil
       assigns(:book).version.should eq nil
-      assigns(:book).no_of_copies.should eq nil
+      assigns(:book).no_of_copies.should eq 1
       response.should have_http_status(:ok)
     end
   end
@@ -131,7 +131,7 @@ RSpec.describe BooksController, type: :controller do
     it 'should not update book with invalid category_id' do
       book1 = FactoryGirl.create(:book)
       book2 = FactoryGirl.create(:book)
-      put :update,id: book1.id, book: { name: book2.name, author: book2.author, price: book2.price, library_id: book.library_id, category_id: '12345678', publication: book2.publication, code: book2.code, version: book2.version, no_of_copies: book2.no_of_copies },format: 'json'
+      put :update,id: book1.id, book: { name: book2.name, author: book2.author, price: book2.price, library_id: book2.library_id, category_id: '12345678', publication: book2.publication, code: book2.code, version: book2.version, no_of_copies: book2.no_of_copies },format: 'json'
       response.should have_http_status(:unprocessable_entity)
     end
   end

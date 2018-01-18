@@ -37,7 +37,7 @@ RSpec.describe MembersController, type: :controller do
       assigns(:member).gender.should eq nil
       assigns(:member).code.should eq nil
       assigns(:member).validity_date.should eq nil
-      assigns(:member).is_author.should eq nil
+      assigns(:member).is_author.should eq false
       response.should have_http_status(:ok)
     end
   end
@@ -115,7 +115,7 @@ RSpec.describe MembersController, type: :controller do
     it 'should not update member with invalid library_id' do
       member1 = FactoryGirl.create(:member)
       member2 = FactoryGirl.create(:member)
-      put :update,id: member1.id, member: { name: member.name, address: member.address, phone_no: member.phone_no, library_id: '1234', gender: member.gender, code: member.code, validity_date: member.validity_date, is_author: member.is_author },format: 'json'
+      put :update,id: member1.id, member: { name: member2.name, address: member2.address, phone_no: member2.phone_no, library_id: '1234', gender: member2.gender, code: member2.code, validity_date: member2.validity_date, is_author: member2.is_author },format: 'json'
       response.should have_http_status(:unprocessable_entity)
     end
   end
