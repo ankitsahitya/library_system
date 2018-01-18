@@ -8,6 +8,7 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'factory_girl_rails'
+gem 'simplecov', :require => false, :group => :test
 gem 'faker'
 gem 'rspec-rails', '~> 3.7'
 # Use Uglifier as compressor for JavaScript assets

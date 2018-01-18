@@ -39,11 +39,11 @@ RSpec.describe Member, type: :model do
     end
 
     it 'should not have empty validity_date' do
-      FactoryGirl.build(:member, phone_no: '').should_not be_valid
+      FactoryGirl.build(:member, validity_date: '').should_not be_valid
     end
 
     it 'should not have invalid validity_date' do
-      FactoryGirl.build(:member, phone_no: 'asdfg').should_not be_valid
+      FactoryGirl.build(:member, validity_date: 'asdfg').should_not be_valid
     end
 
     it 'should not have empty library id' do
