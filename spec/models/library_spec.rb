@@ -7,7 +7,7 @@ RSpec.describe Library, type: :model do
     end
 
     it 'should not have empty name' do
-      FactoryGirl.build(:library).should_not be_valid
+      FactoryGirl.build(:library, name: '').should_not be_valid
     end
 
     it 'should not have empty address' do
@@ -15,15 +15,15 @@ RSpec.describe Library, type: :model do
     end
 
     it 'should not have empty phone number' do
-      FactoryGirl.build(:library, phone: '').should_not be_valid
+      FactoryGirl.build(:library, phone_no: '').should_not be_valid
     end
 
     it 'should not have phone number length less than 10' do
-      FactoryGirl.build(:library, phone: '1234').should_not be_valid
+      FactoryGirl.build(:library, phone_no: '1234').should_not be_valid
     end
 
     it 'should not have phone number greater less than 15' do
-      FactoryGirl.build(:library, phone: '1234567890987654').should_not be_valid
+      FactoryGirl.build(:library, phone_no: '1234567890987654').should_not be_valid
     end
   end
 

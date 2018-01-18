@@ -5,7 +5,7 @@ class CreateIssueHistories < ActiveRecord::Migration
       t.references :book, foreign_key: true
       t.date :issue_date
       t.date :return_date
-      t.integer :type_of_book
+      t.string :type_of_book
       t.integer :no_of_copies, default: 1
       t.timestamps
     end

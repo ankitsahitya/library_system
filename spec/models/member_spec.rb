@@ -3,55 +3,55 @@ require 'rails_helper'
 RSpec.describe Member, type: :model do
   context 'validation' do
     it 'should have valid attributes' do
-      FactoryGirl.create(:member).should be_valid
+      FactoryGirl.build(:member, gender:'male').should be_valid
     end
 
     it 'should not have empty name' do
-      FactoryGirl.create(:member, name: '').should_not be_valid
+      FactoryGirl.build(:member, name: '').should_not be_valid
     end
 
     it 'should not have empty code' do
-      FactoryGirl.create(:member, code: '').should_not be_valid
+      FactoryGirl.build(:member, code: '').should_not be_valid
     end
 
     it 'should not have empty address' do
-      FactoryGirl.create(:member, address: '').should_not be_valid
+      FactoryGirl.build(:member, address: '').should_not be_valid
     end
 
     it 'should not have empty gender' do
-      FactoryGirl.create(:member, gender: '').should_not be_valid
+      FactoryGirl.build(:member, gender: '').should_not be_valid
     end
 
     it 'should not have invalid gender' do
-      FactoryGirl.create(:member, gender: 'asdfghj').should_not be_valid
+      FactoryGirl.build(:member, gender: 'asdfghj').should_not be_valid
     end
 
     it 'should not have empty phone_no' do
-      FactoryGirl.create(:member, phone_no: '').should_not be_valid
+      FactoryGirl.build(:member, phone_no: '').should_not be_valid
     end
 
     it 'should not have phone number length less than 10' do
-      FactoryGirl.build(:member, phone: '1234').should_not be_valid
+      FactoryGirl.build(:member, phone_no: '1234').should_not be_valid
     end
 
     it 'should not have phone number greater less than 15' do
-      FactoryGirl.build(:member, phone: '1234567890987654').should_not be_valid
+      FactoryGirl.build(:member, phone_no: '1234567890987654').should_not be_valid
     end
 
     it 'should not have empty validity_date' do
-      FactoryGirl.create(:member, phone_no: '').should_not be_valid
+      FactoryGirl.build(:member, phone_no: '').should_not be_valid
     end
 
     it 'should not have invalid validity_date' do
-      FactoryGirl.create(:member, phone_no: 'asdfg').should_not be_valid
+      FactoryGirl.build(:member, phone_no: 'asdfg').should_not be_valid
     end
 
     it 'should not have empty library id' do
-      FactoryGirl.create(:member, library_id: '').should_not be_valid
+      FactoryGirl.build(:member, library_id: '').should_not be_valid
     end
 
     it 'should not have invalid library id' do
-      FactoryGirl.create(:member, library_id: 'a').should_not be_valid
+      FactoryGirl.build(:member, library_id: 'a').should_not be_valid
     end
   end
 

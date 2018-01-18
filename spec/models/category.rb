@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   context 'validation' do
     it 'should have valid attributes' do
-      FactoryGirl.create(:category).should be_valid
+      FactoryGirl.build(:category).should be_valid
     end
 
     it 'should not have empty name' do
-      FactoryGirl.create(:category, name: '').should_not be_valid
+      FactoryGirl.build(:category, name: '').should_not be_valid
     end
   end
 

@@ -2,7 +2,9 @@ FactoryGirl.define do
 	factory :issue_history do
 		member_id { FactoryGirl.create(:member).id }
 		book_id { FactoryGirl.create(:book).id }
-		issue_type %i[rent return].sample
-    return_date Date.new(Faker::Number.between(2000, 2020), Faker::Number.between(1, 31), Faker::Number.between(1, 12))
-		issue_date Date.new(Faker::Number.between(2000, 2020), Faker::Number.between(1, 31), Faker::Number.between(1, 12))
+		type_of_book %w[rent return].sample
+		no_of_copies Faker::Number.number(2)
+    return_date Faker::Date.between(2.days.ago, Date.today).strftime("%F")
+		issue_date Faker::Date.between(5.days.ago, Date.today).strftime("%F")
 	end
+end

@@ -3,55 +3,55 @@ require 'rails_helper'
 RSpec.describe Book, type: :model do
   context 'validation' do
     it 'should have valid attributes' do
-      FactoryGirl.create(:book).should be_valid
+      FactoryGirl.build(:book).should be_valid
     end
 
     it 'should not have empty name' do
-      FactoryGirl.create(:book, name: '').should_not be_valid
+      FactoryGirl.build(:book, name: '').should_not be_valid
     end
 
     it 'should not have empty author' do
-      FactoryGirl.create(:book, author: '').should_not be_valid
+      FactoryGirl.build(:book, author: '').should_not be_valid
     end
 
     it 'should not have empty code' do
-      FactoryGirl.create(:book, code: '').should_not be_valid
+      FactoryGirl.build(:book, code: '').should_not be_valid
     end
 
     it 'should not have empty price' do
-      FactoryGirl.create(:book, price: '').should_not be_valid
+      FactoryGirl.build(:book, price: '').should_not be_valid
     end
 
     it 'should not have invalid price' do
-      FactoryGirl.create(:book, price: 'asdfgh').should_not be_valid
+      FactoryGirl.build(:book, price: 'asdfgh').should_not be_valid
     end
 
     it 'should not have empty publication' do
-      FactoryGirl.create(:book, publication: '').should_not be_valid
+      FactoryGirl.build(:book, publication: '').should_not be_valid
     end
 
     it 'should not have empty version' do
-      FactoryGirl.create(:book, version: '').should_not be_valid
+      FactoryGirl.build(:book, version: '').should_not be_valid
     end
 
     it 'should not have invalid no. of copies' do
-      FactoryGirl.create(:book, no_of_copies: 'asdfgh').should_not be_valid
+      FactoryGirl.build(:book, no_of_copies: 'asdfgh').should_not be_valid
     end
 
     it 'should not have empty library id' do
-      FactoryGirl.create(:book, library_id: '').should_not be_valid
+      FactoryGirl.build(:book, library_id: '').should_not be_valid
     end
 
     it 'should not have invalid library id' do
-      FactoryGirl.create(:book, library_id: 'a').should_not be_valid
+      FactoryGirl.build(:book, library_id: 'a').should_not be_valid
     end
 
     it 'should not have empty category id' do
-      FactoryGirl.create(:book, category_id: '').should_not be_valid
+      FactoryGirl.build(:book, category_id: '').should_not be_valid
     end
 
     it 'should not have invalid category id' do
-      FactoryGirl.create(:book, category_id: 'a').should_not be_valid
+      FactoryGirl.build(:book, category_id: 'a').should_not be_valid
     end
   end
 
@@ -92,7 +92,7 @@ RSpec.describe Book, type: :model do
       book.issue_histories.should include issueHistory2
     end
 
-    it 'should not have many invalid issue histories' do
+    it 'should not have invalid issue histories' do
       book1 = FactoryGirl.create(:book)
       book2 = FactoryGirl.create(:book)
       issueHistory1 = FactoryGirl.create(:issue_history, book_id: book1.id)
