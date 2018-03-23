@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Library”>
+    <title>Library Management</title>
+  </head>
+  <body onload="editLibrary()">
+    <h1>Edit libraries</h1>
+		<form>
+			<input id="libraryId" type="text" name="libraryId" hidden="true">
+		  <label class="heading">Library name:</label>
+		  <input id="libraryName" class="data" type="text" name="libraryName">
+		  <br>
+		  <label class="heading">Address:</label>
+		  <input id="address" class="data" type="text" name="address">
+		  <br>
+		  <label class="heading">Phone No:</label>
+		  <input id="phoneNo" class="data" type="text" name="phone_no">
+		  <br><br>
+		  <input class="button submit" type="button" value="Submit" onclick="update(libraryName.value,address.value,phone_no.value,libraryId.value)">
+		</form> 
+  </body>
+</html>

@@ -1,9 +1,11 @@
 class BooksController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
 	def new
 		@book = Book.new
 		respond_to do |format|
 			format.json { render json: {book: @book}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -12,6 +14,7 @@ class BooksController < ApplicationController
 			@book = Book.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {book:@book}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|
@@ -55,6 +58,7 @@ class BooksController < ApplicationController
 		@books = Book.all
 		respond_to do |format|
 			format.json { render json: {books:@books}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -63,6 +67,7 @@ class BooksController < ApplicationController
 			@book = Book.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {book:@book}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|

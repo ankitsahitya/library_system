@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Library”>
+    <title>Library Management</title>
+  </head>
+  <body>
+    <h1>New libraries</h1>
+		<form id="newLibrary">
+		  <label class="heading">Library name:</label>
+		  <input class="data" type="text" name="libraryName">
+		  <br>
+		  <label class="heading">Address:</label>
+		  <input class="data" type="text" name="address">
+		  <br>
+		  <label class="heading">Phone No:</label>
+		  <input class="data" type="text" name="phone_no">
+		  <br><br>
+		  <input class="button submit" type="button" value="Submit" onclick="create(libraryName.value,address.value,phone_no.value)">
+		</form> 
+  </body>
+</html>

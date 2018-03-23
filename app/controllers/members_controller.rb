@@ -1,9 +1,11 @@
 class MembersController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
 	def new
 		@member = Member.new
 		respond_to do |format|
 			format.json { render json: {member: @member}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -12,6 +14,7 @@ class MembersController < ApplicationController
 			@member = Member.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {member:@member}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|
@@ -55,6 +58,7 @@ class MembersController < ApplicationController
 		@members = Member.all
 		respond_to do |format|
 			format.json { render json: {members:@members}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -63,6 +67,7 @@ class MembersController < ApplicationController
 			@member = Member.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {member:@member}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|

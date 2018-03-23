@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Book”>
+    <title>Library Management</title>
+  </head>
+  <body>
+    <h1>Edit books</h1>
+		<form>
+      Book name:<br>
+      <input type="text" name="bookName">
+      <br>
+      Member name:<br>
+      <input type="text" name="memberName">
+      <br>
+      Issue Date:<br>
+      <input type="date" name="issueDate">
+      <br>
+      Return Date:<br>
+      <input type="text" name="returnDate">
+      <br>
+      Type of Book:<br>
+      <input type="radio" name="typeOfBook" value="return" checked>return
+      <input type="radio" name="typeOfBook" value="rent" checked>rent
+      <br>
+      No of copies:<br>
+      <input type="number" name="noOfCopies">
+      <br><br>
+      <input type="button" value="Submit" onclick="update(bookName,memberName,issueDate,returnDate,typeOfBook,noOfCopies)">
+    </form>
+  </body>
+</html>

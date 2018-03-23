@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Book”>
+    <title>Library Management</title>
+  </head>
+  <body onload="editBook()">
+    <h1>Edit books</h1>
+		<form>
+      <input type="text" name="libraryId" hidden="true">
+      Books name:<br>
+      <input type="text" name="bookName">
+      <br>
+      Author:<br>
+      <input type="text" name="author">
+      <br>
+      Price:<br>
+      <input type="text" name="price">
+      <br>
+      Publication:<br>
+      <input type="text" name="publication">
+      <br>
+      Category:<br>
+      <select id="category" name="category"></select>
+      <br>
+      Code:<br>
+      <input type="text" name="code">
+      <br>
+      Version:<br>
+      <input type="text" name="version">
+      <br>
+      No of copies:<br>
+      <input type="number" name="no_of_copies">
+      <br><br>
+      <input type="button" value="Submit" onclick="update(libraryId,bookName,author,price,publication,category,code,version,no_of_copies)">
+    </form>
+  </body>
+</html>

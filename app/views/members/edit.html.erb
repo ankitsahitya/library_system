@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Member”>
+    <title>Library Management</title>
+  </head>
+  <body>
+    <h1>Edit Members</h1>
+		<form>
+      <input type="text" name="libraryId" hidden="true">
+      Members name:<br>
+      <input type="text" name="memberName">
+      <br>
+      Address:<br>
+      <input type="text" name="address">
+      <br>
+      Phone_no:<br>
+      <input type="text" name="phone_no">
+      <br>
+      Gender:<br>
+      <select name="gender"><option value="male">Male</option><option value="female">Female</option></select>
+      <br>
+      Code:<br>
+      <input type="text" name="code">
+      <br>
+      Validity date:<br>
+      <input type="date" name="validity_date">
+      <br>
+      Is author:<br>
+      <input type="radio" name="is_author" value="true" checked>Yes
+      <input type="radio" name="is_author" value="false" checked>No
+      <br><br>
+      <input type="button" value="Submit" onclick="update(libraryId,memberName,address,phone_no,gender,code,validity_date,is_author)">
+    </form> 
+  </body>
+</html>

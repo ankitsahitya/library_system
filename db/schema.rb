@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110134715) do
+ActiveRecord::Schema.define(version: 20180323110549) do
 
   create_table "books", force: :cascade do |t|
     t.integer  "library_id",   limit: 4
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 20180110134715) do
   end
 
   add_index "members", ["library_id"], name: "fk_rails_c1b1972aa6", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string "name",          limit: 255
+    t.string "email",         limit: 255
+    t.string "provider_name", limit: 255
+    t.string "provider_id",   limit: 255
+  end
 
   add_foreign_key "books", "categories"
   add_foreign_key "books", "libraries"

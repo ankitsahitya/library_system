@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
 	def new
 		@category = Category.new
 		respond_to do |format|
 			format.json { render json: {category: @category}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -12,6 +14,7 @@ class CategoriesController < ApplicationController
 			@category = Category.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {category:@category}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|
@@ -49,6 +52,7 @@ class CategoriesController < ApplicationController
 		@categories = Category.all
 		respond_to do |format|
 			format.json { render json: {categories:@categories}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -57,6 +61,7 @@ class CategoriesController < ApplicationController
 			@category = Category.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {category:@category}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|

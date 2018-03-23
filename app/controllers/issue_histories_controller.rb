@@ -1,9 +1,11 @@
 class IssueHistoriesController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
 	def new
 		@issueHistory = IssueHistory.new
 		respond_to do |format|
 			format.json { render json: {issue_history: @issueHistory}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -12,6 +14,7 @@ class IssueHistoriesController < ApplicationController
 			@issueHistory = IssueHistory.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {issue_history:@issueHistory}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|
@@ -55,6 +58,7 @@ class IssueHistoriesController < ApplicationController
 		@issueHistories = IssueHistory.all
 		respond_to do |format|
 			format.json { render json: {issue_histories:@issueHistories}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -63,6 +67,7 @@ class IssueHistoriesController < ApplicationController
 			@issueHistory = IssueHistory.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {issue_history:@issueHistory}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|

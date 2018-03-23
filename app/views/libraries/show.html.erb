@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=“UTF-8”>
+    <meta lang=“english”>
+    <meta title=“Library”>
+    <title>Library Management</title>
+  </head>
+  <body onload="showLibrary()">
+    <div id="library">
+      <label class="name"></label><br />
+      <lable class="address"></lable><br />
+      <lable class="phone_no"></lable><br />
+    </div>
+    <div id="books">
+      <h1>Books</h1>
+      <table class="list">
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th colspan="3"></th>
+        </tr>
+      </table>
+    </div>
+    <div id="addBooks">
+      <h1>Add Books</h1>
+      <form>
+        <input class="libraryId" type="text" name="libraryId" hidden="true">
+        <label class="heading">Books name:</label>
+        <input class="data" type="text" name="bookName">
+        <label class="heading">Author:</label>
+        <input class="data" type="text" name="author">
+        <label class="heading">Price:</label>
+        <input class="data" type="text" name="price">
+        <label class="heading">Publication:</label>
+        <input class="data" type="text" name="publication">
+        <label class="heading">Category:</label>
+        <select class="data" id="category" name="category"></select>
+        <label class="data" class="heading">Code:</label>
+        <input class="data" type="text" name="code">
+        <label class="data" class="heading">Version:</label>
+        <input class="data" type="text" name="version">
+        <label class="heading">No of copies:</label>
+        <input class="data" type="number" name="no_of_copies">
+        <br><br>
+        <input class="button submit" type="button" value="Submit" onclick="createBook(libraryId.value,bookName.value,author.value,price.value,publication.value,category.value,code.value,version.value,no_of_copies.value)">
+      </form> 
+    </div> 
+    <div id="members">
+      <h1>Members</h1>
+      <table class="list">
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone no</th>
+          <th colspan="3"></th>
+        </tr>
+      </table>
+    </div>
+    <div id="addMembers">
+      <h1>Add Members</h1>
+      <form>
+        <input class="libraryId" type="text" name="libraryId" hidden="true">
+        <label class="heading">Members name:</label>
+        <input class="data" type="text" name="memberName">
+        <label class="heading">Address:</label>
+        <input class="data" type="text" name="address">
+        <label class="heading">Phone_no:</label>
+        <input class="data" type="text" name="phone_no">
+        <label class="heading">Gender:</label>
+        <select class="data" name="gender"><option value="male">Male</option><option value="female">Female</option></select>
+        <label class="heading">Code:</label>
+        <input class="data" type="text" name="code">
+        <label class="heading">Validity date:</label>
+        <input class="data" type="date" name="validity_date">
+        <label class="heading">Is author:</label>
+        <input type="radio" name="is_author" value="true" checked>Yes
+        <input type="radio" name="is_author" value="false" checked>No
+        <br><br>
+        <input class="button submit" type="button" value="Submit" onclick="createMember(libraryId.value,memberName.value,address.value,phone_no.value,gender.value,code.value,validity_date.value,is_author.value)">
+      </form> 
+    </div> 
+  </body>
+</html>

@@ -1,9 +1,11 @@
 class LibrariesController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
 	def new
 		@library = Library.new
 		respond_to do |format|
 			format.json { render json: {library: @library}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -12,6 +14,7 @@ class LibrariesController < ApplicationController
 			@library = Library.find(params[:id])
 			respond_to do |format|
 				format.json { render json: {library:@library}, status: :ok }
+				format.html {}
 			end
 		rescue ActiveRecord::RecordNotFound => e
 			respond_to do |format|
@@ -49,6 +52,7 @@ class LibrariesController < ApplicationController
 		@libraries = Library.all
 		respond_to do |format|
 			format.json { render json: {libraries:@libraries}, status: :ok }
+			format.html {}
 		end
 	end
 
@@ -56,6 +60,7 @@ class LibrariesController < ApplicationController
 		begin
 			@library = Library.find(params[:id])
 			respond_to do |format|
+				format.html {}
 				format.json { render json: {library:@library}, status: :ok }
 			end
 		rescue ActiveRecord::RecordNotFound => e
